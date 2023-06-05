@@ -1,0 +1,86 @@
+<app-navbar></app-navbar>
+<div class="row">
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+      <h3 class="text-center"> Update StudentDetails </h3>
+      <hr />
+      <div class="card-body">
+        <form  (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label> StudentId</label>
+            <input type="text" class="form-control" id="studentId" [(ngModel)]="student.studentId" name="studentId">
+          </div>
+          <div class="form-group">
+            <label> Student Name</label>
+
+            <input type="text" class="form-control" id="studentName" [(ngModel)]="student.studentName"
+              name="studentName">
+              <!-- <div *ngIf="studentForm.controls['studentName'].invalid && (studentForm.controls['studentName'].dirty || studentForm.controls['studentName'].touched)">
+                <div *ngIf="studentForm.controls['studentName'].errors.required">
+                  Student Name is required.
+                </div>
+              </div> -->
+              
+              <!-- <div *ngIf="studentName.invalid && (studentName.dirty || studentName.touched)">
+                <div *ngIf="studentName.errors.required">
+                  Name is required.
+                </div>
+                </div> -->
+              <!-- <div *ngIf="student.studentName.invalid && (student.studentName.dirty || student.studentName.touched)">
+                <div *ngIf="student.studentName.errors.required">
+                  Name is required.
+                </div>
+                </div> -->
+          </div>
+          <div class="form-group">
+            <label> Course</label>
+
+            
+            <select id="Course" [(ngModel)]="student.course" name="Course"
+            >
+            <option value="" disabled selected>Select a course</option>
+            <option value="BE">BE</option>
+            <option value="BTech">BTech</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Specialization</label>
+            <select id="specialization"  [(ngModel)]="student.specialization" name="specialization" 
+            >
+                  <option value="" disabled selected>Select a department</option>
+                  <option value="CSE">CSE</option>
+                  <option value="ECE">ECE</option>
+                  <option value="IT">IT</option>
+                  <option value="BME">BME</option>
+                  <option value="MECH">MECH</option>
+                  <option value="EEE">EEE</option>
+              </select>
+              <!-- <input type="text" class="form-control" id="specialization" [(ngModel)]="student.specialization"
+              name="specialization"> -->
+          </div>
+          <div class="form-group">
+            <label> StudentPercentage</label>
+
+            <input type="text" class="form-control" id="studentPercentage" [(ngModel)]="student.studentPercentage"
+              name="studentPercentage">
+
+          </div>
+          <div class="form-group">
+            <label> DepartmentId</label>
+
+            <input type="text" class="form-control" id="departmentId" [(ngModel)]="student.departmentId"
+              name="departmentId">
+
+          </div>
+
+          <br />
+          <button  class="btn btn-success" type="submit">Submit</button>
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

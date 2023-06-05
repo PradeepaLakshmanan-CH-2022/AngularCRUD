@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<h3> Delete Student Details</h3>
+<div>
+   <div>
+      <label> <b> StudentName: </b></label> {{student.studentName}}
+   </div>
+   <div>
+      <label> <b>Course: </b></label> {{student.course}}
+   </div>
+   <div>
+      <label> <b> Specialization: </b></label> {{student.specialization}}
+   </div>
+   <div>
+      <label> <b> StudentPercentage: </b></label> {{student.studentPercentage}}
+   </div>
+   <div>
+      <label> <b> DepartmentId: </b></label> {{student.departmentId}}
+   </div>
+   <button class="btn btn-danger" type="submit" (click)="onSubmit()">Delete</button>
+</div>

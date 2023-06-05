@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;" class="navbar-brand">Department List</h1>
+        <div class="d-flex">
+
+            
+            <button routerLink="/create-department" class="btn btn-success mx-3">Add Department</button>
+        </div>
+    </div>
+</nav>
+<table class="table table-striped" className='table-container'>
+    <thead>
+        <tr>
+            <!-- <th>DepartmentId</th> -->
+            <th>DepartmentName</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dept of departmentlist">
+            <!-- <td>{{dept.departmentId}}</td> -->
+            <td>{{dept.departmentName}}</td>
+            <td>
+
+                <button (click)="updateDepartment(dept.departmentId)" class="btn btn-primary"> Update</button>
+                <button (click)="deleteDepartment(dept.departmentId)" class="btn btn-danger" style="margin-left: 10px">
+                    Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+
+
+</table>

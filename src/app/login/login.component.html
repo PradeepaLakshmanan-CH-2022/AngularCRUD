@@ -1,0 +1,65 @@
+<section class="h-100 gradient-form" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+          <div class="card rounded-3 text-black">
+            <div class="row g-0">
+              <div class="col-lg-6">
+                <div class="card-body p-md-5 mx-md-4">
+  
+                 
+  
+               
+                    <p>Please login your account</p>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()" >
+                        
+                    <div class="form-outline mb-4">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small><br>
+                        <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Email address is required</span>
+                        <span class="text-danger" *ngIf="loginForm.hasError('email','email')">*Email is Invalid</span>
+                        </div>
+                 
+                    <div class="form-outline mb-4">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*Password is required</span>
+                        <span *ngIf="passwordIncorrect" class="text-danger">Incorrect password. Please try again.</span>
+                    </div>
+  
+                    
+                    <!-- <div class="text-center pt-1 mb-5 pb-1">
+                        <button routerLink='/navbar' [disabled]="!loginForm.valid" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Login
+                          </button>
+                       
+                      </div> -->
+                      <div class="text-center pt-1 mb-5 pb-1">
+                       <button [disabled]="!loginForm.valid"  class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Login
+                          </button> 
+                          </div>
+                   
+                      <!-- <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary mt-3">Login</button> -->
+                      <div class="d-flex align-items-center justify-content-center pb-4">
+                        <p class="mb-0 me-2">Don't have account?</p>
+                        <button routerLink='/signup'(Click)="login" type="button"  class="btn btn-outline-danger">Register</button>
+                      </div>
+                 
+                    </form>
+                   
+              
+  
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                  <h4 class="mb-4">Welcome to Anna University</h4>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

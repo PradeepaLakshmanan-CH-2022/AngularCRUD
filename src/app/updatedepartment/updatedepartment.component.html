@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="row">
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+      <h3 class="text-center"> Update Department </h3>
+      <hr />
+      <div class="card-body">
+        <form   (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label> DepartmentId</label>
+            <input type="text" class="form-control" id="departmentId" [(ngModel)]="department.departmentId"
+              name="departmentId">
+          </div>
+
+          <div class="form-group">
+          
+            <label> Department Name</label>
+                             
+                                   
+                              <select id="departmentName"  [(ngModel)]="department.departmentName" name="departmentName" 
+                             >
+                                   <option value="" disabled selected>Select a department</option>
+                                   <option value="CSE">CSE</option>
+                                   <option value="ECE">ECE</option>
+                                   <option value="IT">IT</option>
+                                   <option value="BME">BME</option>
+                                   <option value="MECH">MECH</option>
+                                   <option value="EEE">EEE</option>
+                               </select>
+                             
+          </div>
+          <br />
+          <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

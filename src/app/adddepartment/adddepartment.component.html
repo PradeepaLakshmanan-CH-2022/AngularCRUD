@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="row">
+     <div class="card col-md-6 offset-md-3 offset-md-3">
+          <div class="row">
+               <h3 class="text-center"> Add Department </h3>
+               <hr />
+               <div class="card-body">
+                    <form [formGroup]="departmentForm"  (ngSubmit)="onSubmit()">
+                    
+                         <div class="form-group">
+                              <label> Department Name</label>
+                             
+                                   
+                              <select id="departmentName" formControlName="departmentName"  name="departmentName" 
+                             >
+                                   <option value="" disabled selected>Select a department</option>
+                                   <option value="CSE">CSE</option>
+                                   <option value="ECE">ECE</option>
+                                   <option value="IT">IT</option>
+                                   <option value="BME">BME</option>
+                                   <option value="MECH">MECH</option>
+                                   <option value="EEE">EEE</option>
+                               </select>
+                               <span class="text-danger" *ngIf="departmentForm.controls['departmentName'].dirty && departmentForm.hasError('required','departmentName')">*Department Name is required</span>
+                           </div>
+                           
+                         <br />
+                         <button  [disabled]="!departmentForm.valid" class="btn btn-success" type="submit">Submit</button>
+                    </form>
+
+               </div>
+          </div>
+     </div>
+</div>
